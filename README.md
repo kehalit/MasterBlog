@@ -9,14 +9,6 @@ Delete posts
 JSON file as a simple database
 Basic styling with CSS
 
-# Project Structure
-
-/project-root
-├── app.py
-├── utils/
-├── templates/
-├── static/
-├── DB
 
 # Future Improvements
 Replace JSON with a real database
