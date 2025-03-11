@@ -1,31 +1,6 @@
-import json
 from flask import Flask, render_template, request, url_for
+from utils.blog_utils import load_posts,save_posts, fetch_post_by_id
 from werkzeug.utils import redirect
-
-
-def load_posts():
-    try:
-        with open('DB/blog_posts.json', 'r') as file:
-            data = json.load(file)
-            if not isinstance(data, list):
-                return []
-            return data
-    except (FileNotFoundError, json.JSONDecodeError):
-        return []
-
-
-def save_posts(posts):
-    with open('DB/blog_posts.json', 'w') as file:
-        json.dump(posts, file, indent=4)
-
-
-def fetch_post_by_id(post_id):
-   posts = load_posts()
-   for post in posts:
-       if post['id'] == post_id:
-           return post
-       return None
-
 
 app = Flask(__name__)
 
@@ -69,21 +44,7 @@ def delete(post_id):
     return redirect(url_for('index')) # Redirect back to the home page
 
 
-@app.route('/update/<int:post_id>', methods=['GET', 'POST'])
-def update(post_id):
-    # Fetch the blog posts from the JSON file
-    post = fetch_post_by_id(post_id)
-    if post is None:
-        # Post not found
-        return "Post not found", 404
 
-    if request.method == 'POST':
-        # Update the post in the JSON file
-        # Redirect back to index
-
-        # Else, it's a GET request
-        # So display the update.html page
-    return render_template('update.html', post=post)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5003, debug=True)
