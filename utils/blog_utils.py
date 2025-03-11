@@ -16,8 +16,8 @@ def save_posts(posts):
 
 
 def fetch_post_by_id(post_id):
-   posts = load_posts()
-   for post in posts:
+    posts = load_posts()
+    for post in posts:
        if post['id'] == post_id:
-           return post
-       return None
+        return post
+    return None

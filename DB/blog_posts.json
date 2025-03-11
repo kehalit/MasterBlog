@@ -7,8 +7,14 @@
     },
     {
         "id": 3,
-        "author": "kahineb",
-        "title": "the maru",
-        "content": "it is written by the famous writer kahi"
+        "author": "Alice Smith",
+        "title": "Third Post",
+        "content": "This is yet another post."
+    },
+    {
+        "id": 4,
+        "author": "John Doe",
+        "title": "THE CAPITOL",
+        "content": "DHF DHSD djfadsfakdj djfad jfa dfadjakd fadjfwoiuerieur. 45438754893"
     }
 ]
